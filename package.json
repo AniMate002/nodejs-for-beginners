@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-for-beginners",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "say": "node index.js",
+    "run-os": "node moduleOs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AniMate002/nodejs-for-beginners.git"
+  },
+  "author": "Shauchenka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AniMate002/nodejs-for-beginners/issues"
+  },
+  "homepage": "https://github.com/AniMate002/nodejs-for-beginners#readme",
+  "dependencies": {
+    "currency-converter-lt": "^2.0.1"
+  }
+}
