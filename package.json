@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "say": "node index.js",
-    "run-os": "node moduleOs.js"
+    "run-os": "node moduleOs.js",
+    "run-fs": "node modulefs.js"
   },
   "repository": {
     "type": "git",
