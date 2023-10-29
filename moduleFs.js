@@ -4,6 +4,8 @@ const { error } = require('console')
 const fs = require('fs')
 // fs - stands for FileSystem
 
+
+//          1)РАБОТА С ФАЙЛАМИ
 if(fs.existsSync('someTextSync.txt')){
     const data = fs.readFileSync('someTextSync.txt', "utf-8")
     console.log("Text in someTextSync.txt: " + data)
@@ -29,3 +31,29 @@ if(fs.existsSync("someTextAsynch.txt")){
         })
     })
 }
+
+
+// обычно лучше использовать ASYNCH функции
+//          2)РАБОТА С ПАПКАМИ
+fs.mkdir('someFolderAsynch', () => {//создаение папки
+    console.log("New folder someFolderAsynch has been created...")
+    fs.writeFile("./someFolderAsynch/someTextInsideFolderAsynch.txt", "Hello World", (error, data) => {//созданеи .txt файла внутри папки
+        console.log("New file someTextInsideFolderAsynch.txt has been created...")
+    })
+})
+
+
+//      3)УДАЛЕНИЕ ФАЙЛОВ И ПАПОК
+
+fs.mkdir('folderToDelete', () => {//создаение папки
+    fs.writeFile("./folderToDelete/fileToDelete.txt", "Hello World", (error, data) => {//созданеи .txt файла внутри папки
+        // ЧТОБЫ УДАЛИТЬ ПАПКУ НАЖО СНАЧАЛА УДАЛИТЬ ВСЕ ЕЕ СОДЕРЖИМОЕ
+        // И ТОЛЬКО ПОТОМ САМУ ПАПКУ
+        fs.unlink("./folderToDelete/fileToDelete.txt", (error, data) => {//УДАЛЯЕМ СОДЕРЖИМОЕ
+            console.log("File fileToDelete.txt has created and been deleted...")
+            fs.rmdir("folderToDelete", (error, data) => {
+                console.log("Folder folderToDelete has been created and deleted...")
+            })
+        })
+    })
+})
