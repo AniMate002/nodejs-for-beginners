@@ -8,7 +8,8 @@
     "say": "node index.js",
     "run-os": "node moduleOs.js",
     "run-fs": "node modulefs.js",
-    "run-server": "node myServer.js"
+    "run-server": "node myServer.js",
+    "run-express": "node myExpress.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/AniMate002/nodejs-for-beginners#readme",
   "dependencies": {
-    "currency-converter-lt": "^2.0.1"
+    "currency-converter-lt": "^2.0.1",
+    "express": "^4.18.2"
   }
 }
