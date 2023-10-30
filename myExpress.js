@@ -4,6 +4,7 @@ const express = require('express')//импорт Express JS
 
 const app = express()//создаение сервера
 app.set('view engine', "ejs")//добавление ШАБЛОНИЗАТОРА на сервер
+app.use(express.static('public'))//установление СТАТИЧЕСКОЙ папку, для подключения стилей
 
 app.get('/', (request, response) => {//получение главной страницы
     // response.send('This is Main page using Express JS')      ----------      to send text

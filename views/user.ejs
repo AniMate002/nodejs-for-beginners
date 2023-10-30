@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet" >
     <title>Node JS</title>
 </head>
 <body>
-    <h1>User page created with Node JS, Express JS, EJS</h1>
-    <h2>User: <%= userName %></h2>
-    <h3>Hobbies:</h3>
+    <%- include('components/header') -%>
+    <h1 class="mainTitle">User page created with Node JS, Express JS, EJS</h1>
+    <h2 class="mainTitle">User: <%= userName %></h2>
+    <h3 class="mainTitle">Hobbies:</h3>
     <% if(userName.length !== 0){ %>
         <ul>
             <% hobbies.forEach(el => {%>
-                <li><%= el%></li>
+                <li class="liItem"><%= el%></li>
             <% }) %>
         </ul>
     <% } %>
-    
-    <a href="/">Go to Main Page</a>
-    <a href="/about">Go to About Page</a>
+
 </body>
 </html>
